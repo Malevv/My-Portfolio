@@ -1,0 +1,204 @@
+<!-- <div class="lebenslauf">
+    <div class="part">
+        <img *ngIf="showIMAGE" class="img-slideShow"
+            src="./assets/images/{{images[currentIMAGE]}}">
+    </div>
+    <div class="part">ausbildung</div>
+    <div class="part">arbeit</div>
+    <div class="part">meister</div>
+    <div class="part">airbus</div>
+    <div class="part">dj</div>
+    <div class="part">rewa</div>
+    <div class="part">programmierer</div>
+    <div class="part">programmierer</div>
+
+</div> -->
+
+
+
+
+<div class="lebenslauf">
+	<section class="timeline">
+		<ul>
+			<li>
+				<div>
+					<time>1991-2001</time>
+					<div class="discovery">
+						<h1>
+							Grund & Realschule, Neukierchen
+						</h1>
+						<p>
+							Abschluss: Mittlere Reife
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2001-2005</time>
+					<div class="discovery">
+						<h1>
+							Ausbildung Kfz-Mechaniker, Autohaus Graml GmbH, Hilpoltstein
+						</h1>
+						<p>
+							Abschluss: Gesellenbrief
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2005-2012</time>
+					<div class="discovery">
+						<h1>
+							Kfz-Mechaniker, Autohaus Graml GmbH, Hilpoltstein
+						</h1>
+						<p>
+							Wartung & Service am Kfz
+							<br>
+							Fehleranalyse & Schadensdokumentation
+							<br>
+							Reparaturarbeiten
+							<br>
+							TÜV-Vorbereitung
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2011</time>
+					<div class="discovery">
+						<h1>
+							IHK-Nürnberg Mittelfranken
+						</h1>
+						<p>
+							Abschluss: Industriemeister
+							<br>
+							Fachbereich: Mechatronik
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2013-2016</time>
+					<div class="discovery">
+						<h1>
+							Servicetechniker, KW Energie GmbH & Co. KG, Freystadt
+						</h1>
+						<p>
+							Inbetriebnahme & Überwachung BHKW´s beim Kunden
+							<br>
+							Reparaturarbeiten & Technischer Notdienst
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2016-2018</time>
+					<div class="discovery">
+						<h1>
+							Fluggerätemechaniker, Airbus Defence ans Space, Manching
+						</h1>
+						<p>
+							2 Jahresvertrag
+							<br>
+							Cockpitupgrade (Digitaliesierung)
+							<br>
+							an Awacs-Aufkärungsflugzeugen
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2018-2020</time>
+					<div class="discovery">
+						<h1>
+							CEO-Eventservice, Zweitagebart GmbH
+						</h1>
+						<p>
+							Einstellung & Disposition externer Subunternehmer/Mitarbeiter
+							<br>
+							Kalkulation/Angebotserstellung/Rechnungswesen
+							<br>
+							Koordinationsgespräche mit Kunden/Mitarbeiter
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<time>2021</time>
+					<div class="discovery">
+						<h1>
+							Ausbildung Software Engineer, Developer Academy GmbH, München
+						</h1>
+						<p>
+							Abschluss: Zertifikat zum Software Engineer
+						</p>
+					</div>
+					<div class="img">
+						<img src=".\assets\images\school1.jpg">
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+
+
+
+
+
+<script>
+	let items = document.querySelectorAll(".timeline li");
+
+function isElementInViewport(el) {
+  let rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function callbackFunc() {
+  for (let i = 0; i < items.length; i++) {
+    if (isElementInViewport(items[i])) {
+      if(!items[i].classList.contains("in-view")){
+        items[i].classList.add("in-view");
+      }
+    } else if(items[i].classList.contains("in-view")) {
+        items[i].classList.remove("in-view");
+    }
+  }
+}
+ 
+window.addEventListener("load", callbackFunc);
+window.addEventListener("scroll", callbackFunc);
+</script>

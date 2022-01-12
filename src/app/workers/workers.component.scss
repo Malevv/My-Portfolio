@@ -1,0 +1,259 @@
+// .lebenslauf {
+//     margin: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+// .part {
+//     width: 500px;
+//     height: 230px;
+//     margin: 1px;
+//     background-color: yellow;
+// }
+// .part img {
+//     width: 500px;
+//     height: 200px;
+//     object-fit: cover;
+//     max-width: 100%;
+//     overflow: hidden;
+// }
+
+// .img-slideShow {
+//     object-fit: cover;
+//     max-width: 100%;
+//     animation-name: slide;
+//     animation-duration: 10s;
+//     animation-direction: normal;
+//     animation-timing-function: ease;
+//     animation-iteration-count: infinite;
+// }
+// @keyframes slide {
+//     0% {
+//         background-position: 0 0;
+//     }
+//     16.66% {
+//         background-position: 0 0;
+//     }
+//     33.32% {
+//         background-position: -800px 0;
+//     }
+//     49.98% {
+//         background-position: -800px 0;
+//     }
+//     66.64% {
+//         background-position: -1600px 0;
+//     }
+//     83.30% {
+//         background-position: -1600px 0;
+//     }
+//     100% {
+//         background-position: 0 0;
+//     }
+// }
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lebenslauf {
+    // font: normal 16px/1.5 'Titillium Web', sans-serif;
+    background: rgb(23, 20, 20);
+    color: whitesmoke;
+    overflow: scroll;
+    padding-bottom: 50px;
+  }
+
+
+
+.timeline {
+  ul {
+    li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      padding-top: 50px;
+      background: #fff;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) rotate(45deg);
+        width: 20px;
+        height: 20px;
+        z-index: 110;
+        background: #eee;
+      }
+      div {
+        position: relative;
+        bottom: 0;
+        width: 400px;
+        padding: 20px;
+        background: #0ff;
+        box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        time {
+          position: absolute;
+          background: #f5af19;
+          width: 80px;
+          height: 30px;
+          top: -15px;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          letter-spacing: 2px;
+        }
+        div {
+          height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          p {
+            text-align: center;
+          }
+        }
+        .discovery {
+          margin-right: 10px;
+        }
+        .img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+      }
+      &:nth-of-type(odd) {
+        > div {
+          left: 45px;
+        }
+      }
+      &:nth-of-type(even) {
+        > div {
+          left: -439px;
+        }
+      }
+    }
+  }
+}
+
+
+.timeline {
+  ul {
+    li {
+      div {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      &:nth-of-type(odd) {
+        div {
+          transform: translate3d(100px, -10px, 0) rotate(10deg);
+        }
+      }
+      &:nth-of-type(even) {
+        div {
+          transform: translate3d(-100px, -10px, 0) rotate(10deg);
+        }
+      }
+      &.in-view {
+        div {
+          transform: none;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media screen and (max-width: 900px) {
+//   .timeline {
+//     ul {
+//       li {
+//         div {
+//           width: 250px;
+//           flex-direction: column;
+//           div {
+//             width: 80%;
+//             margin: 10px;
+//           }
+//         }
+//         &:nth-of-type(even) {
+//           > div {
+//             left: -289px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   body {
+//     background: #8bfff4;
+//   }
+//   .timeline {
+//     ul {
+//       li {
+//         margin-left: 20px;
+//         div {
+//           width: calc(100vw - 91px);
+//         }
+//         &:nth-of-type(even) {
+//           > div {
+//             left: 45px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
