@@ -1,75 +1,74 @@
-
 ul {
-    margin:0;
-    padding:0;
-    display:flex;
-    position: absolute;
-    position: fixed;
-    flex-direction: column;
-    top: 50%;
-    left:95%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    animation: showmenu;
-    animation-duration: 2s;
-    animation-delay: 6s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    z-index: 100;
-  }
-  
-  ul li {
-    list-style:none;
-    margin: 30px 15px;
-  }
-  
-  ul li a {
-    position: relative;
-    display: block;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    background: #171515;
-    border-radius: 100%;
-    font-size: 30px;
-    color: #666;
-    transition: .5s;
-  }
-  
-  ul li a:before {
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    background: f0f;
-    transition: .5s;
-    transform: scale(.9);
-    z-index: -1;
-  }
-  
-  ul li a:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #0ff;
-    filter: blur(3px);
-  }
-  
-  ul li a:hover {
-    color: #f0f;
-    box-shadow: 0 0 15px #0ff;
-    text-shadow: 0 0 15px #0ff;
-  }
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  position: fixed;
+  flex-direction: column;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: showmenu;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 100;
+}
 
-  @keyframes showmenu {
-    from {
-      opacity: 0;
-      top: 0;
-    }
-    to {
-      opacity: 1;
-      top: 50%;
-    }
+ul li {
+  list-style: none;
+  margin: 30px 15px;
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  // background: #171515;
+  border-radius: 100%;
+  font-size: 30px;
+  color: #666;
+  transition: 0.5s;
+}
+
+ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: f0f;
+  transition: 0.5s;
+  transform: scale(0.9);
+  z-index: -1;
+}
+
+ul li a:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #0ff;
+  filter: blur(3px);
+}
+
+ul li a:hover {
+  color: #f0f;
+  box-shadow: 0 0 15px #0ff;
+  text-shadow: 0 0 15px #0ff;
+}
+
+@keyframes showmenu {
+  from {
+    opacity: 0;
+    top: 0%;
   }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}

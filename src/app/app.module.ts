@@ -8,6 +8,11 @@ import { MainComponent } from './main/main.component';
 import { SocialComponent } from './social/social.component';
 import { SkillsComponent } from './skills/skills.component';
 import { WorkersComponent } from './workers/workers.component';
+import { ProjectComponent } from './project/project.component';
+import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { ImpressumComponent } from './impressum/impressum.component';
+import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { WorkersComponent } from './workers/workers.component';
     MainComponent,
     SocialComponent,
     SkillsComponent,
-    WorkersComponent
+    WorkersComponent,
+    ProjectComponent,
+    ContactComponent,
+    FooterComponent,
+    ImpressumComponent,
+    DatenschutzComponent
   ],
   imports: [
     BrowserModule,

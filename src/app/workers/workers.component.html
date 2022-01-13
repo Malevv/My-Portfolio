@@ -1,27 +1,9 @@
-<!-- <div class="lebenslauf">
-    <div class="part">
-        <img *ngIf="showIMAGE" class="img-slideShow"
-            src="./assets/images/{{images[currentIMAGE]}}">
-    </div>
-    <div class="part">ausbildung</div>
-    <div class="part">arbeit</div>
-    <div class="part">meister</div>
-    <div class="part">airbus</div>
-    <div class="part">dj</div>
-    <div class="part">rewa</div>
-    <div class="part">programmierer</div>
-    <div class="part">programmierer</div>
-
-</div> -->
-
-
-
-
-<div class="lebenslauf">
+<div class="lebenslauf" id="work">
+	<span>curriculum vitae</span>
 	<section class="timeline">
 		<ul>
 			<li>
-				<div>
+				<div class="box">
 					<time>1991-2001</time>
 					<div class="discovery">
 						<h1>
@@ -31,33 +13,33 @@
 							Abschluss: Mittlere Reife
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\school3.jpg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2001-2005</time>
 					<div class="discovery">
 						<h1>
-							Ausbildung Kfz-Mechaniker, Autohaus Graml GmbH, Hilpoltstein
+							Ausbildung Kfz-Mechaniker, Autohaus Graml, Hilpoltstein
 						</h1>
 						<p>
 							Abschluss: Gesellenbrief
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\kfz2.jpg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2005-2012</time>
 					<div class="discovery">
 						<h1>
-							Kfz-Mechaniker, Autohaus Graml GmbH, Hilpoltstein
+							Kfz-Mechaniker, Autohaus Graml, Hilpoltstein
 						</h1>
 						<p>
 							Wartung & Service am Kfz
@@ -65,17 +47,16 @@
 							Fehleranalyse & Schadensdokumentation
 							<br>
 							Reparaturarbeiten
-							<br>
-							TÜV-Vorbereitung
+							
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\kfz.jpg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2011</time>
 					<div class="discovery">
 						<h1>
@@ -87,35 +68,35 @@
 							Fachbereich: Mechatronik
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\brief.jpg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2013-2016</time>
 					<div class="discovery">
 						<h1>
-							Servicetechniker, KW Energie GmbH & Co. KG, Freystadt
+							Servicetechniker,<br> KW Energie GmbH, Freystadt
 						</h1>
 						<p>
-							Inbetriebnahme & Überwachung BHKW´s beim Kunden
+							Inbetriebnahme & Überwachung der BHKW´s 
 							<br>
 							Reparaturarbeiten & Technischer Notdienst
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src="./assets/images/kw.jpeg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2016-2018</time>
 					<div class="discovery">
 						<h1>
-							Fluggerätemechaniker, Airbus Defence ans Space, Manching
+							Fluggerätemechaniker, Airbus, Manching
 						</h1>
 						<p>
 							2 Jahresvertrag
@@ -125,13 +106,13 @@
 							an Awacs-Aufkärungsflugzeugen
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\airbus.jpg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2018-2020</time>
 					<div class="discovery">
 						<h1>
@@ -140,18 +121,16 @@
 						<p>
 							Einstellung & Disposition externer Subunternehmer/Mitarbeiter
 							<br>
-							Kalkulation/Angebotserstellung/Rechnungswesen
-							<br>
 							Koordinationsgespräche mit Kunden/Mitarbeiter
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\dj.jpg">
 					</div>
 				</div>
 			</li>
 			<li>
-				<div>
+				<div class="box">
 					<time>2021</time>
 					<div class="discovery">
 						<h1>
@@ -161,8 +140,8 @@
 							Abschluss: Zertifikat zum Software Engineer
 						</p>
 					</div>
-					<div class="img">
-						<img src=".\assets\images\school1.jpg">
+					<div>
+						<img class="img" src=".\assets\images\pro.jpg">
 					</div>
 				</div>
 			</li>
@@ -174,31 +153,4 @@
 
 
 
-<script>
-	let items = document.querySelectorAll(".timeline li");
 
-function isElementInViewport(el) {
-  let rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-function callbackFunc() {
-  for (let i = 0; i < items.length; i++) {
-    if (isElementInViewport(items[i])) {
-      if(!items[i].classList.contains("in-view")){
-        items[i].classList.add("in-view");
-      }
-    } else if(items[i].classList.contains("in-view")) {
-        items[i].classList.remove("in-view");
-    }
-  }
-}
- 
-window.addEventListener("load", callbackFunc);
-window.addEventListener("scroll", callbackFunc);
-</script>

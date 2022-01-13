@@ -1,0 +1,15 @@
+div {
+    width: 100vw;
+    height: 70px;
+    margin: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    a {
+        font-size: 25px;
+        text-decoration: none;
+        color: white;
+        padding:15px;
+    }
+}

@@ -26,7 +26,7 @@ h1 {
     }
 }
 
-$background-color: blrgb(23, 20, 20);
+$background-color: rgb(23, 20, 20);
 $bar-empty: rgb(23, 20, 20);
 $bar-color: rgb(145, 4, 145);
 
@@ -40,7 +40,7 @@ $glow-color: #0ff;
     position: relative;
     z-index: -15;
 
-    background-color: $bar-empty;
+    // background-color: $bar-empty;
 
     .progress {
         position: relative;
@@ -243,3 +243,5 @@ $glow-color: #0ff;
         transform: rotate(90deg);
     }
 }
+
+
