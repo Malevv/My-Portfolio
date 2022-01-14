@@ -5,7 +5,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
@@ -26,16 +25,15 @@ h4 {
 
 #contact-form {
     background-color: rgba(50, 43, 43, 0);
-    padding: 10px 20px 30px 20px;
+
     max-width: 100%;
-    margin: 50px;
+    // margin: 50px;
     float: left;
     left: 50%;
 
     border-radius: 7px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
-
 }
 #contact-form input,
 #contact-form select,
@@ -110,20 +108,34 @@ textarea:required {
     display: none;
 }
 
+iframe {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
 /* Make form look nice on smaller screens */
 @media only screen and (max-width: 580px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     #contact-form {
-        left: 3%;
-        margin-right: 3%;
-        width: 88%;
+        width: 70%;
         margin-left: 0;
         padding-left: 3%;
         padding-right: 3%;
     }
-}
 
-iframe {
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    iframe {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+        margin-left: 0px;
+    }
 }

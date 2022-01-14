@@ -1,11 +1,12 @@
 // progress bar appearance
 .containers {
-    width: 100vw;
+    width: 97vw;
     height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 0;
 }
 
 h1 {
@@ -156,7 +157,7 @@ $glow-color: #0ff;
         width: 0%;
     }
     100% {
-        width: 40%;
+        width: 60%;
     }
 }
 
@@ -165,7 +166,7 @@ $glow-color: #0ff;
         width: 0%;
     }
     100% {
-        width: 99%;
+        width: 100%;
     }
 }
 
@@ -244,4 +245,20 @@ $glow-color: #0ff;
     }
 }
 
+@media screen and (max-width: 1125px) {
 
+}
+
+@media screen and (max-width: 620px) {
+    .containers {
+        width: 80vw;
+        padding-left: 15%;
+    }
+    
+    .progress-bar {
+        height: 50px;
+        width: 250px;
+        
+        position: relative;
+    }
+}

@@ -1,3 +1,7 @@
+.all {
+    margin: 0;
+}
+
 .front {
     width: 90vw;
     height: 100vh;
@@ -12,7 +16,7 @@
     overflow: hidden;
     text-align: start;
     height: 1.1em;
-    font-size: 55px;
+    font-size: 52px;
     word-wrap: break-word;
     white-space: nowrap;
     animation: typing;
@@ -27,7 +31,7 @@
     }
 
     to {
-        width: 50ch;        
+        width: 40ch;
     }
 }
 
@@ -46,13 +50,14 @@ img {
     animation-fill-mode: forwards;
     animation-delay: 1s;
 }
+
 @keyframes avatar {
     from {
         left: 40%;
     }
 
     to {
-        left: 60%;
+        left: 63%;
         top: 35%;
         width: 300px;
         height: 300px;
@@ -61,7 +66,13 @@ img {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
+    .all {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 80vw;
+    }
     .front {
         width: 90vw;
         height: 100vh;
@@ -72,16 +83,38 @@ img {
     }
 
     .animated-text {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       position: absolute;
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        animation: typing;
+        position: relative;
+        animation-duration: 5s;
+        opacity: 0;
+        animation-iteration-count: steps(30) forwards;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes typing {
+        from {
+            top: 0%;
+            width: 0;
+            opacity: 0;
+        }
+
+        to {
+            top: -20%;
+            width: 30ch;
+            opacity: 1;
+        }
     }
 
     img {
         display: flex;
-        justify-content: center;        
+        justify-content: center;
         position: absolute;
+        left: 30%;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
         animation-name: avatar;
         animation-duration: 4s;
@@ -89,21 +122,60 @@ img {
         animation-fill-mode: forwards;
         animation-delay: 1s;
     }
-    
+
     @keyframes avatar {
         from {
-            left: 40%;
+            left: 30%;
             top: 20%;
         }
-    
+
         to {
-            
-            top: 60%;
+            top: 50%;
             width: 200px;
             height: 200px;
-            box-shadow: inset 0 0 60px whitesmoke, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f,
-                inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
+            left: 30%;
+            box-shadow: inset 0 0 60px whitesmoke, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff,
+                inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
         }
     }
+}
 
+@media screen and (max-width: 650px) {
+    .animated-text {
+        display: flex;
+        justify-content: center;
+        left: 13%;
+        font-size: 20px;
+    }
+
+    img {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 27%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation-name: avatar;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes avatar {
+        from {
+            left: 27%;
+            top: 20%;
+        }
+
+        to {
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            left: 27%;
+            box-shadow: inset 0 0 60px whitesmoke, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff,
+                inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
+        }
+    }
 }

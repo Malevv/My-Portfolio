@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
+import { AboutmeComponent } from './aboutme/aboutme.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DatenschutzComponent } from './datenschutz/datenschutz.component';
     ContactComponent,
     FooterComponent,
     ImpressumComponent,
-    DatenschutzComponent
+    DatenschutzComponent,
+    AboutmeComponent
   ],
   imports: [
     BrowserModule,

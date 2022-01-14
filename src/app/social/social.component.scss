@@ -4,7 +4,7 @@
     align-items: center;
     position: absolute;
     top: 90%;
-    left: 2%;
+    left: 5%;
 }
 .btn {
     width: 40px;
@@ -25,6 +25,7 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
 i.fa {
     font-size: 44px;
 }
@@ -91,6 +92,7 @@ i.fa {
     }
     to {
         opacity: 1;
+        left:25%
        
     }
 }

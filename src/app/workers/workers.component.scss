@@ -180,16 +180,21 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+ 
   .img {
     display: none;
   }
   p {
     display: none;
   }
+  h1 {
+    font-size: 15px;
+    display: block;
+  }
   .timeline {
     ul {
       li {
-        margin-left: 20px;
+        margin-left: 5px;
         div {
           width: 60vw;
           height: 25vh;
