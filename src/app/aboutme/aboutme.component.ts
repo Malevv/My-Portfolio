@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { fn } from 'jquery';
+
+let window: Window & typeof globalThis;
 
 @Component({
   selector: 'app-aboutme',
   templateUrl: './aboutme.component.html',
   styleUrls: ['./aboutme.component.scss']
 })
-export class AboutmeComponent implements OnInit, ready {
+export class AboutmeComponent implements OnInit, AfterViewInit {
 
+  offset: JQuery.Coordinates | undefined
+  currentPage: number | undefined
   i: any;
   content: any;
 
-  ngready(): void {
+  ngAfterViewInit(): void {
     /*
      * Main variables
      */
@@ -29,7 +34,9 @@ export class AboutmeComponent implements OnInit, ready {
         ["<u>Grouped text</u>"], " separate text".split("")
       ]
     }];
+
     let currentPage = 0;
+
     //generate content
     for (let i = 0; i < this.content.length; i++) {
       //split content letters to array
@@ -42,8 +49,8 @@ export class AboutmeComponent implements OnInit, ready {
         //if array (grouped text)
         else if (typeof this.content[i][obj] === "object") {
           let toPush = [];
-          for(let j = 0; j < this.content[i][obj].length; j++) {
-            for(let k = 0; k < this.content[i][obj][j].length; k++) {
+          for (let j = 0; j < this.content[i][obj].length; j++) {
+            for (let k = 0; k < this.content[i][obj][j].length; k++) {
               toPush.push(this.content[i][obj][j][k]);
             }
           }
@@ -52,32 +59,33 @@ export class AboutmeComponent implements OnInit, ready {
       }
       //set text to 
       $("#segments").append("<div class=\"letters-wrap mutable\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
-      setText();
+      this.setText();
       //clone to data
       $("#segments").append("<div class=\"letters-wrap position-data\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
-      setText();
+      this.setText();
     }
+
     //initial arrangement
     arrangeCurrentPage();
     scrambleOthers();
     /*
      * Event handlers
      */
-    $(window).resize(function() {
+    $(window).resize(() => {
       this.arrangeCurrentPage();
       this.scrambleOthers();
     });
     $("#soup-prev").hide();
-    $("#soup-prev").click(function() {
+    $("#soup-prev").onclick(() => {
       $("#soup-next").show();
       currentPage--;
       if (currentPage === 0) {
         $("#soup-prev").hide();
       }
-      this.arrangeCurrentPage();
-      this.scrambleOthers();
+      arrangeCurrentPage();
+      scrambleOthers();
     });
-    $("#soup-next").click(function() {
+    $("#soup-next").click(() => {
       $("#soup-prev").show();
       currentPage++;
       if (currentPage === content.length - 1) {
@@ -92,32 +100,34 @@ export class AboutmeComponent implements OnInit, ready {
     arrangeCurrentPage() {
       for (let i = 0; i < this.content[currentPage].title.length; i++) {
         $(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(i).css({
-          left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().left + "px",
-          top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().top + "px",
+          left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset()?.left + "px",
+          top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset()?.top + "px",
           color: "#111",
           zIndex: 9001
         });
       }
       for (let i = 0; i < this.content[currentPage].desc.length; i++) {
         $(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).css({
-          left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().left + "px",
-          top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().top + "px",
+          left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset()?.left + "px",
+          top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset()?.top + "px",
           color: "#111",
           zIndex: 9001
         });
       }
     }
-  
+
     this.setText() {
       let j: any;
-      for (j = 0; j < this.content[i].title.length; j++) {
-        $(".soup-title").last().append("<span class=\"letter\">" + this.content[i].title[j] + "</span>");
-      }
-      for (j = 0; j < this.content[i].desc.length; j++) {
-        $(".soup-desc").last().append("<span class=\"letter\">" + this.content[i].desc[j] + "</span>");
-      }
+      for (j = 0; j < this.content[this.i].title.length; j++) {
+        $(".soup-title").last().append("<span class=\"letter\">" + this.content[this.i].title[j] + "</span>")
+      };
+
+      for (j = 0; j < this.content[this.i].desc.length; j++) {
+        $(".soup-desc").last().append("<span class=\"letter\">" + this.content[this.i].desc[j] + "</span>")
+      };
+
     }
-  
+
     scrambleOthers() {
       for (let i = 0; i < this.content.length; i++) {
         //don't scramble currentPage
@@ -141,8 +151,8 @@ export class AboutmeComponent implements OnInit, ready {
               right: $(window).width() - offset.left,
               bottom: $(window).height() - offset.top
             };
-            var middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2;
-            var middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
+            let middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2;
+            let middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
             //finally, apply all the scrambles
             $(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(k).css({
               left: randLeft,
@@ -154,9 +164,26 @@ export class AboutmeComponent implements OnInit, ready {
         }
       }
     }
-  };
+  } arrangeCurrentPage() {
+    throw new Error('Method not implemented.');
+  }
+  scrambleOthers() {
+    throw new Error('Method not implemented.');
+  }
+  setText() {
+    throw new Error('Method not implemented.');
+  }
+  ;
 
   ngOnInit(): void {
   }
 
 }
+function arrangeCurrentPage() {
+  throw new Error('Function not implemented.');
+}
+
+function scrambleOthers() {
+  throw new Error('Function not implemented.');
+}
+
