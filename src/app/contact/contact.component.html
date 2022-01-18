@@ -2,9 +2,9 @@
 	id="contact">
 	<div id="contact-form">
 		<div>
-			<h1>Nice to Meet You!</h1>
+			<h1>Treten Sie doch mit mir in Kontakt</h1>
 			<h4>
-				Have a question or just want to get in touch? Let's chat.
+				Wenn Sie fragen haben, oder wünsche freue ich mich über Ihre Nachricht!
 			</h4>
 		</div>
 		<p id="failure">
@@ -14,15 +14,16 @@
 			Your message was sent successfully. Thank you!
 		</p>
 
-		<form method="post">
+		<form method="post"
+			action>
 			<div>
 				<label for="name">
 					<span class="required">Name: *</span>
-					<input type="text"
+					<input type="name"
 						id="name"
 						name="name"
 						value
-						placeholder="Your Name"
+						placeholder="Name"
 						required="required"
 						tabindex="1">
 				</label>
@@ -34,29 +35,18 @@
 						id="email"
 						name="email"
 						value
-						placeholder="Your Email"
+						placeholder="Email"
 						tabindex="2"
 						required="required">
-				</label>
-			</div>
-			<div>
-				<label for="subject">
-					<span>Subject:</span>
-					<select id="subject"
-						name="subject"
-						tabindex="4">
-						<option value="hello">Angebot</option>
-						<option value="quote">Kennenlernen</option>
-						<option value="general">Sonstiges</option>
-					</select>
 				</label>
 			</div>
 			<div>
 				<label for="message">
 					<span class="required">Message: *</span>
 					<textarea id="message"
+						type="text"
 						name="message"
-						placeholder="Please write your message here."
+						placeholder="Bitte schreiben Sie hier Ihre Nachricht."
 						tabindex="5"
 						required="required"></textarea>
 				</label>
@@ -65,7 +55,7 @@
 				<button name="submit"
 					type="submit"
 					id="submit">
-					SEND
+					SENDEN
 				</button>
 			</div>
 		</form>

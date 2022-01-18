@@ -1,43 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 
-
-let text = document.getElementById('text');
-let newDom = '';
-let animationDelay = 6;
 
 @Component({
     selector: 'app-aboutme',
     templateUrl: './aboutme.component.html',
     styleUrls: ['./aboutme.component.scss']
 })
-export class AboutmeComponent implements OnInit {
+export class AboutmeComponent implements OnInit, AfterViewInit {
+
+    @ViewChild('text') text!: ElementRef;
+    newDom = '';
+    animationDelay = 6;
+
+    introText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Cupiditate incidunt praesentium, rerum voluptatem in reiciendis officia harum repudiandae tempore suscipit ex ea,<br> adipisci ab porro.';
+
+    constructor() { }
+
+
     ngOnInit(): void {
         throw new Error('Method not implemented.');
     }
 
-//     constructor() {
-//         text: 0;
-//     }
 
-//     ngOnInit() => {
+    ngAfterViewInit(): void {
 
-//     for (let _i = 0; _i < text.innerText.length; _i++) {
-//         newDom += '<span class="char">' + (text.innerText[i] == ' ' ? '&nbsp;' : text.innerText[i]) + '</span>';
-//     }
+        for (let i = 0; i < this.introText.length; i++) {
+            this.newDom += 
+            '<span class="char">' + 
+            (this.introText[i] == ' ' ? '&nbsp;' : this.introText[i]) +
+            '</span>';
+        }
 
-//     text.innerHTML = newDom;
+        this.text.nativeElement.innerHTML = this.newDom;
+        let length = this.text.nativeElement.children.length;
 
-//     length = text.children.length;
+        for (let i = 0; i < length; i++) {
+            this.text.nativeElement.children[i].style['animation-delay'] = 
+            this.animationDelay * i + 'ms';
+        }
 
-//     for (let i = 0; i < length; i++) {
-//         text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
-//     }
 
+    }
 
 
 }
-
-
-
-

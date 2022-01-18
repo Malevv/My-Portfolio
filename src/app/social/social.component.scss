@@ -6,6 +6,10 @@
     top: 90%;
     left: 5%;
 }
+
+a:visited{
+    color:rgb(255, 255, 255);
+  }
 .btn {
     width: 40px;
     height: 40px;
@@ -20,10 +24,12 @@
     border-radius: 10px;
     opacity: 0;
     animation-name: social;
-    animation-duration: 2s;
-    animation-delay: 8s;
+    animation-duration: 1.5s;
+    animation-delay: 6s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    
+    
 }
 
 i.fa {
@@ -31,23 +37,23 @@ i.fa {
 }
 #fb {
     color: #006fff;
-    text-shadow: 0 0 30px #006fff;
+    text-shadow: 0 0 50px #006fff;
 }
 #ig {
     color: #ff5f40;
-    text-shadow: 0 0 30px #ff5f40;
+    text-shadow: 0 0 50px #ff5f40;
 }
 #gh {
     color: #00acff;
-    text-shadow: 0 0 30px #00acff;
+    text-shadow: 0 0 50px #00acff;
 }
 #li {
     color: #00acff;
-    text-shadow: 0 0 30px #00acff;
+    text-shadow: 0 0 50px #00acff;
 }
 #di {
     color: #00acff;
-    text-shadow: 0 0 30px #00acff;
+    text-shadow: 0 0 50px #00acff;
 }
 .btn.fb-btn {
     box-shadow: 0 20px 20px -17px rgba(0, 111, 255, 0.53);
