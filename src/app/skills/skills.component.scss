@@ -1,5 +1,6 @@
 // progress bar appearance
 .containers {
+    
     width: 97vw;
     height: 100vh;
     position: relative;
@@ -29,7 +30,7 @@ h1 {
 
 $background-color: rgb(23, 20, 20);
 $bar-empty: rgb(23, 20, 20);
-$bar-color: rgb(145, 4, 145);
+$bar-color: rgb(255, 255, 255);
 
 $glow-width: 60px;
 $glow-radius: 10px;

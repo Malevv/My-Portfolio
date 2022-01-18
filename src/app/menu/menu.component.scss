@@ -52,14 +52,14 @@ ul li a:before {
 
 ul li a:hover:before {
   transform: scale(1.2);
-  box-shadow: 0 0 15px #0ff;
+  box-shadow: 0 0 15px rgb(135, 63, 32);
   filter: blur(3px);
 }
 
 ul li a:hover {
-  color: #f0f;
-  box-shadow: 0 0 15px #0ff;
-  text-shadow: 0 0 15px #0ff;
+  color: rgb(206, 25, 55);
+  box-shadow: 0 0 15px rgb(135, 63, 32);
+  text-shadow: 0 0 15px rgb(135, 63, 32);
 }
 
 @keyframes showmenu {
@@ -123,14 +123,14 @@ ul li a:hover {
   
   ul li a:hover:before {
     transform: scale(1.2);
-    box-shadow: 0 0 5px #0ff;
+    box-shadow: 0 0 5px rgb(135, 63, 32);
     filter: blur(3px);
   }
   
   ul li a:hover {
-    color: #f0f;
-    box-shadow: 0 0 5px #0ff;
-    text-shadow: 0 0 5px #0ff;
+    color: rgb(206, 25, 55);
+    box-shadow: 0 0 5px rgb(135, 63, 32);
+    text-shadow: 0 0 5px rgb(135, 63, 32);
   }
   
   @keyframes showmenu {

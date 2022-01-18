@@ -4,12 +4,15 @@ html {
 
 body {
     margin: 0;
-    // background-color: rgb(23, 20, 20);
     color: white;
     font-family: "Caveat", cursive;
     font-family: "Homemade Apple", cursive;
     font-family: "Nothing You Could Do", cursive;
-    background: linear-gradient(180deg, rgb(23, 20, 20),rgb(23, 20, 20), rgba(61, 26, 61, 0.809), rgba(42, 86, 86, 0.816),rgb(23, 20, 20),rgb(23, 20, 20));
+    // background: linear-gradient(180deg, black, black, rgb(135, 63, 32), rgb(123, 15, 33),black);
+    background-image: url("./assets/images/bg1.png");
+    // background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment:fixed;
     
 }
 
